@@ -10,7 +10,7 @@ Certainly! Here's an example implementation of the Minimax algorithm in Rust:
 
 | :hash: | Responses |
 |--------|-----------|
-| [:one:]  | Failed    |
+| [:one:](#onest-response)  | Failed    |
 
 ## :one:st Response 
 
