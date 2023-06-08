@@ -284,7 +284,7 @@ error: could not compile `tictactoe` due to 3 previous errors
 ```
 
 
-:two: 2nd response :heavy_check_mark:
+## :two:nd response
 
 
 ```rust
