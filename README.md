@@ -149,6 +149,7 @@ fn main() {
 
 ```rust
 
+
 // A simple implementation of the Minimax algorithm for Tic Tac Toe
 
 // Represents the players in the game
@@ -303,12 +304,25 @@ fn main() {
     // Assuming the human player chose the cell at row 1, column 1
     let mut new_board = board.clone();
     new_board.cells[1][1] = Cell::X; // X is the human player
+    println!("Human player's move: row {}, column {}", 1, 1);
 
     // Find the best move for the AI player
-    let best_move = new_board.find_best_move();
+    let mut best_move = new_board.find_best_move();
 
     println!("AI player's best move: row {}, column {}", best_move.0, best_move.1);
+
+    new_board.cells[best_move.0][best_move.1] = Cell::O;
+
+    new_board.cells[0][1] = Cell::X; // X is the human player
+    println!("Human player's move: row {}, column {}", 0, 1);
+
+    // Find the best move for the AI player
+    best_move = new_board.find_best_move();
+
+    println!("AI player's best move: row {}, column {}", best_move.0, best_move.1);
+
 }
+
 
 ```
 
