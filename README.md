@@ -12,6 +12,7 @@ Certainly! Here's an example implementation of the Minimax algorithm in Rust:
 |--------|-----------|
 | [:one:st](#onest-response)  | Fail :x:    |
 | [:two:nd](#twond-response)  | Success :heavy_check_mark: |
+| [:three:rd](#threerd-response) | Success :heavy_check_mark: |
 
 ## :one:st Response 
 
