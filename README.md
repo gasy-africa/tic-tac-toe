@@ -8,6 +8,12 @@ generate minimax algorithm in rust
 Certainly! Here's an example implementation of the Minimax algorithm in Rust:
 
 
+| :hash: | Responses |
+|--------|-----------|
+| [:one:]  | Failed    |
+
+## :one:st Response 
+
 ```rust
 // A simple implementation of the Minimax algorithm for tic-tac-toe
 
