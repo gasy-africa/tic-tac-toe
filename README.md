@@ -423,6 +423,7 @@ fn main() {
 
 ```rust
 
+
 // A simple implementation of the Minimax algorithm for Tic Tac Toe
 
 // Represents the players in the game
@@ -514,35 +515,36 @@ impl Board {
     // Performs the Minimax algorithm to determine the best move for the specified player
     fn minimax(&self, depth: i32, maximizing_player: bool) -> i32 {
         if self.is_full() || self.has_won(Player::X) || self.has_won(Player::O) {
-            return self.score(Player::O); // O is the AI player, X is the human player
-        }
-
-        if maximizing_player {
-            let mut max_eval = std::i32::MIN;
-            for row in 0..3 {
-                for col in 0..3 {
-                    if let Cell::Empty = self.cells[row][col] {
-                        let mut new_board = self.clone();
-                        new_board.cells[row][col] = Cell::O; // O is the AI player
-                        let eval = new_board.minimax(depth + 1, false);
-                        max_eval = max_eval.max(eval);
-                    }
-                }
-            }
-            return max_eval;
+            self.score(Player::O) // O is the AI player, X is the human player
         } else {
-            let mut min_eval = std::i32::MAX;
-            for row in 0..3 {
-                for col in 0..3 {
-                    if let Cell::Empty = self.cells[row][col] {
-                        let mut new_board = self.clone();
-                        new_board.cells[row][col] = Cell::X; // X is the human player
-                        let eval = new_board.minimax(depth + 1, true);
-                        min_eval = min_eval.min(eval);
+            let min_max = if maximizing_player {
+                let mut max_eval = std::i32::MIN;
+                for row in 0..3 {
+                    for col in 0..3 {
+                        if let Cell::Empty = self.cells[row][col] {
+                            let mut new_board = self.clone();
+                            new_board.cells[row][col] = Cell::O; // O is the AI player
+                            let eval = new_board.minimax(depth + 1, false);
+                            max_eval = max_eval.max(eval);
+                        }
                     }
                 }
-            }
-            return min_eval;
+                max_eval
+            } else {
+                let mut min_eval = std::i32::MAX;
+                for row in 0..3 {
+                    for col in 0..3 {
+                        if let Cell::Empty = self.cells[row][col] {
+                            let mut new_board = self.clone();
+                            new_board.cells[row][col] = Cell::X; // X is the human player
+                            let eval = new_board.minimax(depth + 1, true);
+                            min_eval = min_eval.min(eval);
+                        }
+                    }
+                }
+                min_eval
+            };
+            min_max
         }
     }
 
@@ -582,6 +584,7 @@ fn main() {
 
     println!("AI player's best move: row {}, column {}", best_move.0, best_move.1);
 }
+
 
 ```
 
