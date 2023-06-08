@@ -806,6 +806,4 @@ Enter your move (column [0-2]): 1
 |  | X|  |
 |  | X|  |
 X wins!
-valiha@ramena tictactoe % git checkout README.md 
-Updated 1 path from the index
 ```
