@@ -13,7 +13,7 @@ The aproach is to :
 
 **Summary**
 
-Generate multiple source codes using Generative AI and refactor the best source code based on the state of the art `Refactorization` rules.
+Generate multiple source codes using Generative AI and refactor to the best source code based on the state of the art `Refactorization` rules.
 
 ---
 
