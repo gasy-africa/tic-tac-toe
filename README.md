@@ -10,9 +10,10 @@ Certainly! Here's an example implementation of the Minimax algorithm in Rust:
 
 | :hash: | Responses |
 |--------|-----------|
-| [:one:st](#onest-response)  | Success :heavy_check_mark: |
-| [:two:nd](#twond-response)  | Success :heavy_check_mark: |
-| [:b:](#b-tictactoe) | TicTactoe |
+| [:one:st](#onest-response)  | Success :heavy_check_mark:   |
+| [:two:nd](#twond-response)  | TicTactoe :heavy_check_mark: |
+| [:b:](#b-tictactoe)         | TicTactoe :heavy_check_mark: |
+| [:ab:](#ab-mixing-solution) | Mixing :heavy_check_mark: |
 
 ## :one:st Response 
 
@@ -549,6 +550,7 @@ Enter your move (column [0-2]): 1
 X wins!
 ```
 
+## :ab: Mixing Solution
 
 ```
 cargo run
