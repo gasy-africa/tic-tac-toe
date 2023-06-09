@@ -25,6 +25,7 @@ Please note that this is a basic framework for the Minimax algorithm, and you'll
 
 Additionally, this implementation assumes a two-player, alternating-turn game. If you're working with a different game setup, you might need to modify the algorithm accordingly.
 
+- [ ] Execute
 
 ```
 cargo run
@@ -39,7 +40,17 @@ cargo run
 
 :recycle: `regenerate response`
 
-[:point_right: Click to view the generated source code :scroll: ](.docs/2.md)
+[:point_right: Click to view the generated source code :scroll: ](.docs/2/CODE.md)
+
+- [ ] Execute
+
+```
+cargo run
+```
+> Returns
+
+[:point_right: Click to view the output execute by the source code :chart: ](.docs/2/OUTPUT.md)
+
 
 ## :b: TicTacToe
 
