@@ -5,6 +5,16 @@
 
 This project is a study of the [Minimax](https://en.wikipedia.org/wiki/Minimax) Algorithm, written in [Rust](https://www.rust-lang.org/), through game boards like the [Tic Tac Toe](https://en.wikipedia.org/wiki/Tic-tac-toe) or the [Fanorona](https://en.wikipedia.org/wiki/Fanorona). To facilitate the study, the project will generate and compare different source codes using a [Generative AI](https://en.wikipedia.org/wiki/Generative_artificial_intelligence) tools like [ChatGPT](https://chat.openai.com/)
 
+The aproach is to :
+1. generate a `Minimax Algorithm template`, 
+2. generate several Tic-Tac-Toe source code `examples` used as `templates`
+3. gather all the `Responses`
+4. mix all the `reponses` by refactoringg the source code based on the first `Minimax Algorithm template`
+
+**Summary**
+
+Generate multiple source codes using Generative AI and refactor the best source code based on the state of the art `Refactorization` rules.
+
 ---
 
 
