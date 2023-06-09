@@ -78,7 +78,7 @@ cargo run
 ---
 **NOTE**
 
-The `mixing solution` is to take the `2nd` solution and add the `3rd` solution `input` and `output`
+The `mixing solution` is to take the `2nd` solution and add the `3rd` solution :keyboard: `input`, :desktop_computer: `output` and :loop: `loop` 
 
 ---
 
