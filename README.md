@@ -19,7 +19,7 @@ generate minimax algorithm in rust
 ```
 > Certainly! Here's an example implementation of the Minimax algorithm in Rust:
 
-[:scroll: Code](.docs/1.md)
+[View the source code :scroll: ](.docs/1.md)
 
 Please note that this is a basic framework for the Minimax algorithm, and you'll need to replace the placeholders (...) with your actual game state type and implement the missing parts such as the evaluation function, generating possible moves, and checking for terminal game states.
 
