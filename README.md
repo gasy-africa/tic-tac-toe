@@ -90,7 +90,6 @@ cargo run
 
 [:point_right: Click to view the output when executing the source code :chart: ](.docs/2/OUTPUT.md)
 
-
 ### :three:rd Response
 
 :recycle: `regenerate response`
@@ -109,6 +108,26 @@ cargo run
 > Returns :
 
 [:point_right: Click to view the output when executing the source code :chart: ](.docs/3/OUTPUT.md)
+
+
+### :four:th Response
+
+:recycle: `regenerate response`
+
+[:point_right: Click to view the generated source code :scroll: ](.docs/4/CODE.md)
+
+This implementation allows the human player to play against the computer player using the Minimax algorithm to determine the computer's moves. The game loop continues until there is a winner or a draw, and the final result is displayed at the end. The human player is represented by 'X', and the computer player is represented by 'O'. The human player can enter their move as a row and column coordinate, such as "0,2" for the top-right cell.
+
+Please note that this implementation assumes a standard 3x3 Tic Tac Toe board. If you want to modify the board size, you'll need to adjust the Board type and update the relevant parts of the code accordingly.
+
+- [ ] Execute
+
+```
+cargo run
+```
+> Returns :
+
+[:point_right: Click to view the output when executing the source code :chart: ](.docs/4/OUTPUT.md)
 
 ## :ab: Mixing Solution
 
