@@ -27,12 +27,9 @@ Additionally, this implementation assumes a two-player, alternating-turn game. I
 
 ## :two:nd Response
 
-```rust
-
 ```
 generate minimax algorithm in rust
 ```
-
 
 // A simple implementation of the Minimax algorithm for Tic Tac Toe
 
