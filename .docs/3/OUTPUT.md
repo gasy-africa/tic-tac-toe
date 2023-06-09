@@ -30,3 +30,5 @@ Enter your move (column [0-2]): 1
 |  | X|  |
 X wins!
 ```
+
+## [:back:](../../#b-tictactoe)
