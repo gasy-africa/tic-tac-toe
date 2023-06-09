@@ -120,7 +120,7 @@ The `mixing solution` is to take the `2nd` solution and add the `3rd` solution :
 ---
 
 
-[:point_right: Click to view the generated source code :scroll: ](.docs/4/CODE.md)
+[:point_right: Click to view the generated source code :scroll: ](.docs/ab/CODE.md)
 
 
 - [ ] Execute
@@ -130,7 +130,7 @@ cargo run
 ```
 > Returns :
 
-[:point_right: Click to view the output when executing the source code :chart: ](.docs/4/OUTPUT.md)
+[:point_right: Click to view the output when executing the source code :chart: ](.docs/ab/OUTPUT.md)
 
 
 
