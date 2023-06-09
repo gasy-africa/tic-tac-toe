@@ -25,7 +25,7 @@ Generate multiple source codes using Generative AI and refactor to the best sour
 | :b:   | Tic-Tac-Toe Source Code Generation |
 | [:one:st](#onest-response)  | TicTactoe :heavy_check_mark: |
 | [:two:nd](#twond-response)  | TicTactoe :heavy_check_mark: |
-| [:b:](#b-tictactoe)         | TicTactoe :heavy_check_mark: |
+| [:three:rd](#threerd-response)  | TicTactoe :heavy_check_mark: |
 | [:ab:](#ab-mixing-solution) | Mixing :heavy_check_mark: |
 | [:cl:](#cl-fanorona) | More Code | 
 
