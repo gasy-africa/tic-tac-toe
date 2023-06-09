@@ -19,7 +19,7 @@ generate minimax algorithm in rust
 
 > Certainly! Here's an example implementation of the Minimax algorithm in Rust:
 
-[Code](.docs/1.md)
+[:scroll: Code](.docs/1.md)
 
 ## :two:nd Response
 
