@@ -71,6 +71,8 @@ cargo run
 ```
 > Returns :
 
+[:point_right: Click to view the output when executing the source code :chart: ](.docs/3/OUTPUT.md)
+
 ## :ab: Mixing Solution
 
 ```
