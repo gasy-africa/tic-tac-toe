@@ -48,4 +48,4 @@ warning: `tictactoe` (bin "tictactoe") generated 5 warnings
 Best move: None
 ```
 
-## [:back:](../../#onest-response)
+## [:back:](../../#one-algorithm-template)
