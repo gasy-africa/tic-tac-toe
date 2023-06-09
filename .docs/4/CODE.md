@@ -226,4 +226,4 @@ fn main() {
 }
 ```
 
-## [:back:](../../#ab-mixing)
+## [:back:](../../#ab-mixing-solution)
