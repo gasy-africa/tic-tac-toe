@@ -49,3 +49,5 @@ Enter your move (column [0-2]): 2
 | X| O| X|
 It's a draw!
 ```
+
+## [:back:](../../#ab-mixing-solution)
