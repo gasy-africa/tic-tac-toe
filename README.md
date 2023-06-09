@@ -75,6 +75,14 @@ cargo run
 
 ## :ab: Mixing Solution
 
+---
+**NOTE**
+
+The `mixing solution` is to take the `2nd` solution and add the `3rd` solution `input` and `output`
+
+---
+
+
 [:point_right: Click to view the generated source code :scroll: ](.docs/4/CODE.md)
 
 
