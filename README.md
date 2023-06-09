@@ -58,6 +58,7 @@ cargo run
 
 Sure! Here's an example implementation of Tic-Tac-Toe game using the Minimax algorithm in Rust:
 
+[:point_right: Click to view the generated source code :scroll: ](.docs/3/CODE.md)
 
 This code represents a simple command-line version of Tic-Tac-Toe where the player ('X') plays against the computer ('O') using the Minimax algorithm. The game prompts the player for their moves and displays the board after each move. The game continues until there is a winner or a draw.
 
@@ -69,38 +70,6 @@ Please note that this implementation does not include any advanced techniques li
 cargo run
 ```
 > Returns :
-```yaml
-    Finished dev [unoptimized + debuginfo] target(s) in 0.00s
-     Running `target/debug/tictactoe`
-Welcome to Tic-Tac-Toe!
-|  |  |  |
-|  |  |  |
-|  |  |  |
-Enter your move (row [0-2]): 1
-Enter your move (column [0-2]): 1
-|  |  |  |
-|  | X|  |
-|  |  |  |
-Computer plays: row=0, column=0
-| O|  |  |
-|  | X|  |
-|  |  |  |
-Enter your move (row [0-2]): 0
-Enter your move (column [0-2]): 1
-| O| X|  |
-|  | X|  |
-|  |  |  |
-Computer plays: row=0, column=2
-| O| X| O|
-|  | X|  |
-|  |  |  |
-Enter your move (row [0-2]): 2
-Enter your move (column [0-2]): 1
-| O| X| O|
-|  | X|  |
-|  | X|  |
-X wins!
-```
 
 ## :ab: Mixing Solution
 
