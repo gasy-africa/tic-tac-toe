@@ -14,6 +14,7 @@ Certainly! Here's an example implementation of the Minimax algorithm in Rust:
 | [:two:nd](#twond-response)  | TicTactoe :heavy_check_mark: |
 | [:b:](#b-tictactoe)         | TicTactoe :heavy_check_mark: |
 | [:ab:](#ab-mixing-solution) | Mixing :heavy_check_mark: |
+| [:cl:](#cl-fanorona) | More Code | 
 
 ## :one:st Response 
 
