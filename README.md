@@ -1,4 +1,4 @@
-# tictactoe
+# :abacus: Tic Tac Toe
 
 ---
 **NOTE**
