@@ -32,7 +32,7 @@ cargo run
 ```
 > Returns
 
-[:point_right: Click to view the output execute by the source code :chart: ](.docs/1/OUTPUT.md)
+[:point_right: Click to view the output when executing the source code :chart: ](.docs/1/OUTPUT.md)
 
 
 ## :two:nd Response
@@ -49,7 +49,7 @@ cargo run
 ```
 > Returns
 
-[:point_right: Click to view the output execute by the source code :chart: ](.docs/2/OUTPUT.md)
+[:point_right: Click to view the output when executing the source code :chart: ](.docs/2/OUTPUT.md)
 
 
 ## :b: TicTacToe
