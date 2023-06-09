@@ -91,8 +91,8 @@ impl Board {
         false
     }
 
-    // Returns the score of the current board state for the specified player
-    fn score(&self, player: Player) -> i32 {
+    // Evaluates the score of the current board state for the specified player
+    fn evaluate(&self, player: Player) -> i32 {
         if self.has_won(player) {
             return 1;
         } else if self.has_won(match player {
@@ -107,7 +107,7 @@ impl Board {
     // Performs the Minimax algorithm to determine the best move for the specified player
     fn minimax(&self, depth: i32, maximizing_player: bool) -> i32 {
         if self.is_full() || self.has_won(Player::X) || self.has_won(Player::O) {
-            self.score(Player::O) // O is the AI player, X is the human player
+            self.evaluate(Player::O) // O is the AI player, X is the human player
         } else {
             let min_max = if maximizing_player {
                 let mut max_eval = std::i32::MIN;
@@ -173,7 +173,7 @@ fn play_game() {
         print_board(&board);
 
         // if board.has_won(Player::X) || board.has_won(Player::O) {            
-        if board.score(current_player) != 0 {
+        if board.evaluate(current_player) != 0 {
             match current_player {
                 Player::X => println!("X wins!"),
                 Player::O => println!("O wins!"),
