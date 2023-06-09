@@ -17,4 +17,5 @@ Human player's move: row 1, column 1
 AI player's best move: row 0, column 0
 ```
 
-## [:back:](../#twond-response)
+## [:back:](../../#twond-response)
+
