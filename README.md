@@ -3,7 +3,7 @@
 ---
 **NOTE**
 
-This project is a study of the [Minimax](https://en.wikipedia.org/wiki/Minimax) Algorithm written in [Rust](https://www.rust-lang.org/) through game boards like the [Tic Tac Toe](https://en.wikipedia.org/wiki/Tic-tac-toe). To facilitate the study, the project will generate and compare different source codes using a [Generative AI](https://en.wikipedia.org/wiki/Generative_artificial_intelligence) tools like [ChatGPT](https://chat.openai.com/)
+This project is a study of the [Minimax](https://en.wikipedia.org/wiki/Minimax) Algorithm, written in [Rust](https://www.rust-lang.org/), through game boards like the [Tic Tac Toe](https://en.wikipedia.org/wiki/Tic-tac-toe). To facilitate the study, the project will generate and compare different source codes using a [Generative AI](https://en.wikipedia.org/wiki/Generative_artificial_intelligence) tools like [ChatGPT](https://chat.openai.com/)
 
 ---
 
