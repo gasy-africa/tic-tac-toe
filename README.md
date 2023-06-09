@@ -1,9 +1,5 @@
 # tictactoe
 
-```
-generate minimax algorithm in rust
-```
-
 
 
 
@@ -17,13 +13,25 @@ generate minimax algorithm in rust
 
 ## :one:st Response 
 
+
+```
+generate minimax algorithm in rust
+```
 > Certainly! Here's an example implementation of the Minimax algorithm in Rust:
 
 [:scroll: Code](.docs/1.md)
 
+Please note that this is a basic framework for the Minimax algorithm, and you'll need to replace the placeholders (...) with your actual game state type and implement the missing parts such as the evaluation function, generating possible moves, and checking for terminal game states.
+
+Additionally, this implementation assumes a two-player, alternating-turn game. If you're working with a different game setup, you might need to modify the algorithm accordingly.
+
 ## :two:nd Response
 
 ```rust
+
+```
+generate minimax algorithm in rust
+```
 
 
 // A simple implementation of the Minimax algorithm for Tic Tac Toe
@@ -206,6 +214,8 @@ fn main() {
 
 > generate tic tac toe game using minimax algorithm in rust
 
+Sure! Here's an example implementation of Tic-Tac-Toe game using the Minimax algorithm in Rust:
+
 ```rust
 use std::io;
 use std::io::Write;
@@ -385,6 +395,10 @@ fn main() {
 }
 
 ```
+
+This code represents a simple command-line version of Tic-Tac-Toe where the player ('X') plays against the computer ('O') using the Minimax algorithm. The game prompts the player for their moves and displays the board after each move. The game continues until there is a winner or a draw.
+
+Please note that this implementation does not include any advanced techniques like alpha-beta pruning, and it assumes that the player always enters valid moves. Feel free to enhance the code further according to your requirements.
 
 - [ ] Execute
 
