@@ -19,15 +19,15 @@ Generate multiple source codes using Generative AI and refactor to the best sour
 
 
 
-| :hash: | Acivities |
-|--------|-----------|
-| [:a:](#a-algorithm-template)  | Algorithm Template :heavy_check_mark:   |
-| :b:   | Tic-Tac-Toe Source Code Generation |
-| [:one:st](#onest-response)  | TicTactoe :heavy_check_mark: |
-| [:two:nd](#twond-response)  | TicTactoe :heavy_check_mark: |
-| [:three:rd](#threerd-response)  | TicTactoe :heavy_check_mark: |
-| [:ab:](#ab-mixing-solution) | Mixing :heavy_check_mark: |
-| [:cl:](#cl-fanorona) | More Code | 
+| :hash:                         | Acivities                               |
+|--------------------------------|:----------------------------------------|
+| [:a:](#a-algorithm-template)   | Algorithm Template :heavy_check_mark:   |
+| :b:                            | Tic-Tac-Toe Source Code Generation      |
+| [:one:st](#onest-response)     | TicTactoe :heavy_check_mark:            |
+| [:two:nd](#twond-response)     | TicTactoe :heavy_check_mark:            |
+| [:three:rd](#threerd-response) | TicTactoe :heavy_check_mark:            |
+| [:four:th](#fourth-response)   | TicTactoe :heavy_check_mark:            |
+| [:ab:](#ab-mixing-solution)    | Mixing :heavy_check_mark:               |
 
 ## :a: Algorithm Template 
 
@@ -151,151 +151,3 @@ cargo run
 
 [:point_right: Click to view the output when executing the source code :chart: ](.docs/ab/OUTPUT.md)
 
-
-
-## :cl: Fanorona
-
-> generate a fanorona game written in rust
-
-```rust
-use std::io;
-
-const BOARD_SIZE: usize = 5;
-
-type Board = [[CellState; BOARD_SIZE]; BOARD_SIZE];
-
-#[derive(Copy, Clone, PartialEq)]
-enum CellState {
-    Empty,
-    White,
-    Black,
-}
-
-struct Position {
-    row: usize,
-    col: usize,
-}
-
-struct Move {
-    from: Position,
-    to: Position,
-}
-
-struct Game {
-    board: Board,
-    current_player: CellState,
-}
-
-impl Game {
-    fn new() -> Game {
-        Game {
-            board: [[CellState::Empty; BOARD_SIZE]; BOARD_SIZE],
-            current_player: CellState::White,
-        }
-    }
-
-    fn play(&mut self) {
-        loop {
-            self.display_board();
-
-            let mv = self.get_move();
-            if !self.is_valid_move(&mv) {
-                println!("Invalid move! Please try again.");
-                continue;
-            }
-
-            self.make_move(&mv);
-
-            if self.is_game_over() {
-                self.display_board();
-                println!("Game over!");
-                break;
-            }
-
-            self.switch_players();
-        }
-    }
-
-    fn display_board(&self) {
-        println!("Current board state:");
-        for row in self.board.iter() {
-            for cell in row.iter() {
-                match cell {
-                    CellState::Empty => print!("- "),
-                    CellState::White => print!("W "),
-                    CellState::Black => print!("B "),
-                }
-            }
-            println!();
-        }
-    }
-
-    fn get_move(&self) -> Move {
-        println!("Player {:?}, enter your move (from_row from_col to_row to_col):", self.current_player);
-
-        let mut input = String::new();
-        io::stdin().read_line(&mut input).expect("Failed to read input.");
-
-        let positions: Vec<usize> = input.split_whitespace()
-            .map(|s| s.parse().expect("Invalid input."))
-            .collect();
-
-        let from = Position { row: positions[0], col: positions[1] };
-        let to = Position { row: positions[2], col: positions[3] };
-
-        Move { from, to }
-    }
-
-    fn is_valid_move(&self, mv: &Move) -> bool {
-        let from = mv.from;
-        let to = mv.to;
-
-        // Check if the 'from' and 'to' positions are within the board
-        if from.row >= BOARD_SIZE || from.col >= BOARD_SIZE || to.row >= BOARD_SIZE || to.col >= BOARD_SIZE {
-            return false;
-        }
-
-        // Check if the 'from' position is owned by the current player
-        if self.board[from.row][from.col] != self.current_player {
-            return false;
-        }
-
-        // Check if the 'to' position is empty
-        if self.board[to.row][to.col] != CellState::Empty {
-            return false;
-        }
-
-        // TODO: Implement more rules of Fanorona game for move validation
-
-        true
-    }
-
-    fn make_move(&mut self, mv: &Move) {
-        let from = mv.from;
-        let to = mv.to;
-
-        self.board[from.row][from.col] = CellState::Empty;
-        self.board[to.row][to.col] = self.current_player;
-    }
-
-    fn is_game_over(&self) -> bool {
-        // TODO: Implement game over condition for Fanorona
-
-        false
-    }
-
-    fn switch_players(&mut self) {
-        self.current_player = match self.current_player {
-            CellState::White => CellState::Black,
-            CellState::Black => CellState::White,
-            _ => unreachable!(),
-        };
-    }
-}
-
-fn main() {
-    let mut game = Game::new();
-    game.play();
-}
-
-```
