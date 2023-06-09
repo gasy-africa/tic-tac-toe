@@ -21,13 +21,13 @@ Generate multiple source codes using Generative AI and refactor to the best sour
 
 | :hash: | Acivities |
 |--------|-----------|
-| [:one:](#one-algorithm-template)  | Success :heavy_check_mark:   |
+| [:a:](#a-algorithm-template)  | Success :heavy_check_mark:   |
 | [:two:nd](#twond-response)  | TicTactoe :heavy_check_mark: |
 | [:b:](#b-tictactoe)         | TicTactoe :heavy_check_mark: |
 | [:ab:](#ab-mixing-solution) | Mixing :heavy_check_mark: |
 | [:cl:](#cl-fanorona) | More Code | 
 
-## :one: Algorithm Template 
+## :a: Algorithm Template 
 
 
 ```
