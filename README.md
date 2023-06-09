@@ -22,7 +22,8 @@ Generate multiple source codes using Generative AI and refactor to the best sour
 | :hash: | Acivities |
 |--------|-----------|
 | [:a:](#a-algorithm-template)  | Algorithm Template :heavy_check_mark:   |
-|    | TicTactoe Generation |
+| :b:   | Tic-Tac-Toe Source Code Generation |
+| [:one:st](#onest-response)  | TicTactoe :heavy_check_mark: |
 | [:two:nd](#twond-response)  | TicTactoe :heavy_check_mark: |
 | [:b:](#b-tictactoe)         | TicTactoe :heavy_check_mark: |
 | [:ab:](#ab-mixing-solution) | Mixing :heavy_check_mark: |
@@ -51,9 +52,28 @@ cargo run
 
 [:point_right: Click to view the output when executing the source code :chart: ](.docs/1/OUTPUT.md)
 
+## :b: TicTacToe
 
-## :two:nd Response
+> generate tic tac toe game using minimax algorithm in rust
 
+### :one:st Response
+
+Sure! Here's an example implementation of Tic-Tac-Toe game using the Minimax algorithm in Rust:
+
+[:point_right: Click to view the generated source code :scroll: ](.docs/1/CODE.md)
+
+Please note that this is a basic implementation of the Tic Tac Toe game using the Minimax algorithm. There may be further improvements and optimizations that can be made.
+
+- [ ] Execute
+
+```
+cargo run
+```
+> Returns
+
+[:point_right: Click to view the output when executing the source code :chart: ](.docs/1/OUTPUT.md)
+
+### :two:nd Response
 
 :recycle: `regenerate response`
 
@@ -69,11 +89,9 @@ cargo run
 [:point_right: Click to view the output when executing the source code :chart: ](.docs/2/OUTPUT.md)
 
 
-## :b: TicTacToe
+### :three:rd Response
 
-> generate tic tac toe game using minimax algorithm in rust
-
-Sure! Here's an example implementation of Tic-Tac-Toe game using the Minimax algorithm in Rust:
+:recycle: `regenerate response`
 
 [:point_right: Click to view the generated source code :scroll: ](.docs/3/CODE.md)
 
