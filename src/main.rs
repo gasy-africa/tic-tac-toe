@@ -1,21 +1,3 @@
-use std::io;
-use std::io::Write;
-
-// Function to print the board
-fn print_board(board: &Board) {
-    for row in 0..3 {
-        for col in 0..3 {
-            let symbol = match board.cells[row][col] {
-                Cell::O => "O",
-                Cell::X => "X",
-                _ => " ",
-            };
-            print!("| {}", symbol);
-        }
-        println!("|");
-    }
-}
-
 // A simple implementation of the Minimax algorithm for Tic Tac Toe
 
 // Represents the players in the game
@@ -46,6 +28,13 @@ impl Board {
         Board {
             cells: [[Cell::Empty; 3]; 3],
         }
+    }
+
+    fn make_move(&mut self, row: usize, col: usize, player: Player) {
+        self.cells[row][col] = match player {
+            Player::X => Cell::X,
+            Player::O => Cell::O,
+        };
     }
 
     // Returns true if the board is full
@@ -170,9 +159,8 @@ fn play_game() {
     println!("Welcome to Tic-Tac-Toe!");
 
     loop {
-        print_board(&board);
+        print_board(board);
 
-        // if board.has_won(Player::X) || board.has_won(Player::O) {            
         if board.evaluate(current_player) != 0 {
             match current_player {
                 Player::X => println!("X wins!"),
@@ -184,35 +172,20 @@ fn play_game() {
                 println!("It's a draw!");
                 break
             } else {
-                if current_player == Player::X {
-                    print!("Enter your move (row [0-2]): ");
-                    io::stdout().flush().unwrap();
-                    let mut input = String::new();
-                    io::stdin().read_line(&mut input).unwrap();
-                    let row: usize = input.trim().parse().unwrap();
-        
-                    print!("Enter your move (column [0-2]): ");
-                    io::stdout().flush().unwrap();
-                    input.clear();
-                    io::stdin().read_line(&mut input).unwrap();
-                    let column: usize = input.trim().parse().unwrap();                    
-
-                    match board.cells[row][column] {
-                        Cell::Empty => {
-                            board.cells[row][column] = Cell::X; // X is the human player
-                            current_player = Player::O
-                        },
-                        _ => println!("Invalid move. Try again."),
+                match current_player {
+                    Player::X => {
+                        handle_human_move(&mut board, current_player);
+                        current_player = Player::O
                     }
+                    _ => {
+                        // Find the best move for the AI player
+                        let best_move: (usize,usize) = board.find_best_move();
 
-                } else {
-                    // Find the best move for the AI player
-                    let best_move = board.find_best_move();
+                        println!("Computer plays: row={}, column={}", best_move.0, best_move.1);
 
-                    println!("Computer plays: row={}, column={}", best_move.0, best_move.1);
-
-                    board.cells[best_move.0][best_move.1] = Cell::O;
-                    current_player = Player::X;
+                        board.make_move(best_move.0, best_move.1, current_player);
+                        current_player = Player::X;
+                    }
                 }
             }
         }
@@ -222,4 +195,45 @@ fn play_game() {
 // Main function
 fn main() {
     play_game();
+}
+
+// Function to print the board
+fn print_board(board: Board) {
+    for row in 0..3 {
+        for col in 0..3 {
+            let symbol = match board.cells[row][col] {
+                Cell::O => "O",
+                Cell::X => "X",
+                _ => " ",
+            };
+            print!("| {}", symbol);
+        }
+        println!("|");
+    }
+}
+
+use std::io;
+
+// Function to handle the human player's move
+fn handle_human_move(board: &mut Board, player: Player) {
+    loop {
+        println!("Enter your move (row, col):");
+
+        let mut input = String::new();
+        io::stdin()
+            .read_line(&mut input)
+            .expect("Failed to read input.");
+
+        let input: Vec<&str> = input.trim().split(',').collect();
+        if input.len() == 2 {
+            if let (Ok(row), Ok(col)) = (input[0].parse::<usize>(), input[1].parse::<usize>()) {
+                if row < 3 && col < 3 && board.cells[row][col] == Cell::Empty {
+                    board.make_move(row, col, player);
+                    break;
+                }
+            }
+        }
+
+        println!("Invalid move. Please try again.");
+    }
 }
