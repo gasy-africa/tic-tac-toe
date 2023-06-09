@@ -27,9 +27,8 @@ Additionally, this implementation assumes a two-player, alternating-turn game. I
 
 ## :two:nd Response
 
-```
-generate minimax algorithm in rust
-```
+
+:recycle: `regenerate response`
 
 [View the generated source code :scroll: ](.docs/2.md)
 
