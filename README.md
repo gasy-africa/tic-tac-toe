@@ -5,7 +5,6 @@ generate minimax algorithm in rust
 ```
 
 
-Certainly! Here's an example implementation of the Minimax algorithm in Rust:
 
 
 | :hash: | Responses |
@@ -17,6 +16,8 @@ Certainly! Here's an example implementation of the Minimax algorithm in Rust:
 | [:cl:](#cl-fanorona) | More Code | 
 
 ## :one:st Response 
+
+> Certainly! Here's an example implementation of the Minimax algorithm in Rust:
 
 [Code](.docs/1.md)
 
