@@ -31,6 +31,7 @@ Additionally, this implementation assumes a two-player, alternating-turn game. I
 generate minimax algorithm in rust
 ```
 
+[View the generated source code :scroll: ](.docs/2.md)
 
 ## :b: TicTacToe
 
