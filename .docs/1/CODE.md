@@ -127,4 +127,4 @@ fn main() {
 
 ```
 
-## [:back:](../../#one-algorithm-template)
+## [:back:](../../#a-algorithm-template)
