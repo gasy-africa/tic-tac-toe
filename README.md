@@ -79,6 +79,8 @@ cargo run
 
 [:point_right: Click to view the generated source code :scroll: ](.docs/2/CODE.md)
 
+This implementation demonstrates the Minimax algorithm for the game of Tic Tac Toe. The AI player (O) uses the find_best_move function to determine the best move it should make given the current state of the board.
+
 - [ ] Execute
 
 ```
