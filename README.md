@@ -19,15 +19,15 @@ Generate multiple source codes using Generative AI and refactor to the best sour
 
 
 
-| :hash: | Responses |
+| :hash: | Acivities |
 |--------|-----------|
-| [:one:st](#onest-response)  | Success :heavy_check_mark:   |
+| [:one:](#one-algorithm-template)  | Success :heavy_check_mark:   |
 | [:two:nd](#twond-response)  | TicTactoe :heavy_check_mark: |
 | [:b:](#b-tictactoe)         | TicTactoe :heavy_check_mark: |
 | [:ab:](#ab-mixing-solution) | Mixing :heavy_check_mark: |
 | [:cl:](#cl-fanorona) | More Code | 
 
-## :one:st Response 
+## :one: Algorithm Template 
 
 
 ```
