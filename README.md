@@ -7,7 +7,7 @@ This project is a study of the [Minimax](https://en.wikipedia.org/wiki/Minimax) 
 
 The aproach is to :
 1. generate a `Minimax Algorithm template`, 
-2. generate several Tic-Tac-Toe source code `examples` used as `templates`
+2. generate several Tic-Tac-Toe :scroll: source code `examples` used as :scroll: source code `templates`
 3. gather all the `Responses`
 4. mix all the `reponses` by refactoringg the source code based on the first `Minimax Algorithm template`
 
