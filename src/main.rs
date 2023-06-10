@@ -174,7 +174,36 @@ impl GameState {
 
         best_move
     }
+
+    fn is_terminal(&self) -> bool {
+
+        match self.board.evaluate(self.current_player).cmp(&0) {
+            Ordering::Equal => {
+                if self.board.is_full() {
+                    true
+                } else {
+                    false
+                }
+            }
+            _ => true
+        }
+
+    }
+
+    fn is_there_a_winner(&self) -> Symbol {
+        match self.board.evaluate(self.current_player).cmp(&0) {
+            Ordering::Greater =>
+                Symbol::X,
+            Ordering::Less =>
+                Symbol::O,
+            Ordering::Equal =>
+                Symbol::Empty,
+        }
+    }
+
 }
+
+use std::cmp::Ordering;
 
 // Function to play the game
 fn play_game() {
@@ -184,31 +213,23 @@ fn play_game() {
     loop {
         print_board(game_state.board);
 
-        if game_state.board.evaluate(game_state.current_player) != 0 {
-            match game_state.current_player {
-                Player::X => println!("X wins!"),
-                Player::O => println!("O wins!"),
-            }
+        if game_state.is_terminal() {
+            print_results(game_state.is_there_a_winner()); 
             break
         } else {
-            if game_state.board.is_full() {
-                println!("It's a draw!");
-                break
-            } else {
-                match game_state.current_player {
-                    Player::X => {
-                        handle_human_move(&mut game_state);
-                        game_state.current_player = Player::O
-                    }
-                    _ => {
-                        // Find the best move for the AI player
-                        let best_move: (usize,usize) = game_state.find_best_move();
+            match game_state.current_player {
+                Player::X => {
+                    handle_human_move(&mut game_state);
+                    game_state.current_player = Player::O
+                }
+                _ => {
+                    // Find the best move for the AI player
+                    let best_move: (usize,usize) = game_state.find_best_move();
 
-                        println!("Computer plays: row={}, column={}", best_move.0, best_move.1);
+                    println!("Computer plays: row={}, column={}", best_move.0, best_move.1);
 
-                        game_state.make_move(best_move.0, best_move.1);
-                        game_state.current_player = Player::X;
-                    }
+                    game_state.make_move(best_move.0, best_move.1);
+                    game_state.current_player = Player::X;
                 }
             }
         }
@@ -218,6 +239,17 @@ fn play_game() {
 // Main function
 fn main() {
     play_game();
+}
+
+fn print_results(symbol: Symbol) {
+    match symbol {
+        Symbol::X =>
+            println!("X wins!"),
+        Symbol::O =>
+            println!("O wins!"),
+        Symbol::Empty =>
+            println!("It's a draw!"),
+    }
 }
 
 // Function to print the board
