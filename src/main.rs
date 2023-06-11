@@ -46,13 +46,13 @@ impl Board {
 
     // Returns all possible moves
     fn get_empty_cells(&self) -> Vec<(usize, usize)> {
-        let empty_cells = self.cells
-            .iter().enumerate().flat_map(|(row, cols)| 
+        self.cells.iter().enumerate()
+            .flat_map(|(row, cols)| {
                 cols.iter().enumerate()
-                .filter(|&(_, &cell)| cell == Symbol::Empty )
-                .map(move |(col, _)| (row, col))
-            ).collect();
-        empty_cells
+                    .filter(|(_, &cell)| cell == Symbol::Empty)
+                    .map(move |(col, _)| (row, col))
+            })
+            .collect()
     }
 
     // Returns true if the specified player has won
