@@ -109,7 +109,7 @@ impl Board {
                 let empty_cells = self.get_empty_cells();
                 for &(row, col) in &empty_cells {
                     let mut new_board = self.clone();
-                    new_board.cells[row][col] = Symbol::O; // O is the AI player
+                    GameState::make_move(&mut new_board,row, col, Player::O); // O is the AI player        
                     let eval = new_board.minimax(depth + 1, false);
                     if DEBUG { println!("Cell({},{}), max {}, eval {}",row,col,max_eval,eval) }
                     max_eval = max_eval.max(eval);
@@ -120,7 +120,7 @@ impl Board {
                 let empty_cells = self.get_empty_cells();
                 for &(row, col) in &empty_cells {
                     let mut new_board = self.clone();
-                    new_board.cells[row][col] = Symbol::X; // X is the human player
+                    GameState::make_move(&mut new_board,row, col, Player::X); // X is the human player        
                     let eval = new_board.minimax(depth + 1, true);
                     if DEBUG { println!("Cell({},{}), min {}, eval {}",row,col,min_eval,eval) }
                     min_eval = min_eval.min(eval);
@@ -151,13 +151,6 @@ impl GameState {
         self.board.get_empty_cells()
     }
 
-    fn make_move(&mut self, row: usize, col: usize) {
-        self.board.cells[row][col] = match self.current_player {
-            Player::X => Symbol::X,
-            Player::O => Symbol::O,
-        };
-    }
-
     fn is_valid_move(&mut self, row: usize, col: usize) -> bool {
         if row < 3 && col < 3 && self.board.cells[row][col] == Symbol::Empty {
             true
@@ -173,7 +166,7 @@ impl GameState {
 
         for (row,col) in self.get_possible_moves() {
             let mut new_board = self.board.clone();
-            new_board.cells[row][col] = Symbol::O; // O is the AI player
+            GameState::make_move(&mut new_board,row, col, Player::O); // O is the AI player
             let score = new_board.minimax(0, false);
             if score > best_score {
                 best_score = score;
@@ -210,35 +203,43 @@ impl GameState {
         }
     }
 
+    // Public function capturing the move to a passing board
+    pub fn make_move(board: &mut Board, row: usize, col: usize, player: Player) {
+        board.cells[row][col] = match player {
+            Player::X => Symbol::X,
+            Player::O => Symbol::O,
+        };
+    }
+
 }
 
 use std::cmp::Ordering;
 
 // Function to play the game
 fn play_game() {
-    let mut game_state = GameState::new();
+    let mut state = GameState::new();
     println!("Welcome to Tic-Tac-Toe!");
 
     loop {
-        print_board(game_state.board);
+        print_board(state.board);
 
-        if game_state.is_terminal() {
-            print_results(game_state.is_there_a_winner()); 
+        if state.is_terminal() {
+            print_results(state.is_there_a_winner()); 
             break
         } else {
-            match game_state.current_player {
+            match state.current_player {
                 Player::X => {
-                    handle_human_move(&mut game_state);
-                    game_state.current_player = Player::O
+                    handle_human_move(&mut state);
+                    state.current_player = Player::O
                 }
                 _ => {
                     // Find the best move for the AI player
-                    let best_move: (usize,usize) = game_state.find_best_move();
+                    let (row,col) = state.find_best_move();
+                    GameState::make_move(&mut state.board,row, col, state.current_player);
 
-                    println!("Computer plays: row={}, column={}", best_move.0, best_move.1);
+                    state.current_player = Player::X;
 
-                    game_state.make_move(best_move.0, best_move.1);
-                    game_state.current_player = Player::X;
+                    println!("Computer plays: row={}, column={}", row, col);
                 }
             }
         }
@@ -279,7 +280,7 @@ fn print_board(board: Board) {
 use std::io;
 
 // Function to handle the human player's move
-fn handle_human_move(game_state: &mut GameState) {
+fn handle_human_move(state: &mut GameState) {
     loop {
         println!("Enter your move (row, col):");
 
@@ -291,8 +292,8 @@ fn handle_human_move(game_state: &mut GameState) {
         let input: Vec<&str> = input.trim().split(',').collect();
         if input.len() == 2 {
             if let (Ok(row), Ok(col)) = (input[0].parse::<usize>(), input[1].parse::<usize>()) {
-                if game_state.is_valid_move(row, col) {
-                    game_state.make_move(row, col);
+                if state.is_valid_move(row, col) {
+                    GameState::make_move(&mut state.board,row, col, state.current_player);
                     break;
                 }
             }
