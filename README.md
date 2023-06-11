@@ -28,6 +28,8 @@ Generate multiple source codes using Generative AI and refactor to the best sour
 | [:three:rd](#threerd-response) | TicTactoe :heavy_check_mark:            |
 | [:four:th](#fourth-response)   | TicTactoe :heavy_check_mark:            |
 | [:ab:](#ab-mixing-solution)    | Mixing :heavy_check_mark:               |
+| :cl:                           | Algorithm Enhancement                   |
+| [:five:th](#fifth-response)    | Alpha-Beta :heavy_check_mark:           |
 
 ## :a: Algorithm Template 
 
@@ -145,6 +147,8 @@ The `mixing solution` is to take the `2nd` solution and add the `3rd` solution :
 
 
 ## :cl TicTacToe with enhancced algorithm like `alpha-beta pruning`
+
+### [:five:th](#fifth-response)
 
 :bulb: Second question asked to the Generative AI
 
