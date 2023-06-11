@@ -188,7 +188,8 @@ cargo run
 
 The `mixing solution` is to take the `5th` solution and add the `1st` mixing solution:
 
-* Adding the `get_empty_cells` and 
+* Adding a Game `State`
+* Adding the `get_empty_cells` and `get_possible_moves`
 
 ---
 
