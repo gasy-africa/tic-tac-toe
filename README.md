@@ -187,3 +187,16 @@ The `mixing solution` is to take the `5th` solution and add the `1st` mixing sol
 :bulb: 2nd code enhancement
 
 - [ ] [:point_right: Click to view the generated source code :scroll: ](.docs/ab/2/CODE.md)
+
+---
+**3rd NOTE**
+
+The `mixing solution` is to take the `6th` solution and add the `3rd` mixing solution:
+
+* Adding the `make_move` to add `alpha-beta` pruning
+
+---
+
+:bulb: 3rd code enhancement
+
+- [ ] [:point_right: Click to view the generated source code :scroll: ](.docs/ab/3/CODE.md)
