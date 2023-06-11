@@ -25,3 +25,5 @@ Enter your move (row, col):
 
 Computer wins!
 ```
+
+## [:back:](../../#fiveth-response)
