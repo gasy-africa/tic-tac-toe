@@ -50,4 +50,4 @@ Enter your move (column [0-2]): 2
 It's a draw!
 ```
 
-## [:back:](../../#ab-mixing-solution)
+## [:back:](../../../#ab-mixing-solution)
