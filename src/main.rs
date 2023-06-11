@@ -162,17 +162,13 @@ impl GameState {
         let mut best_score = std::i32::MIN;
         let mut best_move = (0, 0);
 
-        for row in 0..3 {
-            for col in 0..3 {
-                if let Symbol::Empty = self.board.cells[row][col] {
-                    let mut new_board = self.board.clone();
-                    new_board.cells[row][col] = Symbol::O; // O is the AI player
-                    let score = new_board.minimax(0, false);
-                    if score > best_score {
-                        best_score = score;
-                        best_move = (row, col);
-                    }
-                }
+        for (row,col) in self.get_empty_cells() {
+            let mut new_board = self.board.clone();
+            new_board.cells[row][col] = Symbol::O; // O is the AI player
+            let score = new_board.minimax(0, false);
+            if score > best_score {
+                best_score = score;
+                best_move = (row, col);
             }
         }
 
@@ -203,6 +199,16 @@ impl GameState {
             Ordering::Equal =>
                 Symbol::Empty,
         }
+    }
+
+    fn get_empty_cells(&self) -> Vec<(usize, usize)> {
+        let empty_cells = self.board.cells
+            .iter().enumerate().flat_map(|(row, cols)| 
+                cols.iter().enumerate()
+                .filter(|&(_, &cell)| cell == Symbol::Empty )
+                .map(move |(col, _)| (row, col))
+            ).collect();
+        empty_cells
     }
 
 }
