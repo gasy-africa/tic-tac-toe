@@ -147,7 +147,7 @@ The `mixing solution` is to take the `2nd` solution and add the `3rd` solution :
 [:point_right: Click to view the generated source code :scroll: ](.docs/ab/1/CODE.md)
 
 
-## :cl: TicTacToe with enhancced algorithm like `alpha-beta pruning`
+## :cl: TicTacToe with enhanced algorithm like `alpha-beta pruning`
 
 ### [:five:th](#fiveth-response) Response
 
