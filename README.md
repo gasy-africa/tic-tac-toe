@@ -28,6 +28,8 @@ Generate multiple source codes using Generative AI and refactor to the best sour
 | [:three:rd](#threerd-response) | TicTactoe :heavy_check_mark:            |
 | [:four:th](#fourth-response)   | TicTactoe :heavy_check_mark:            |
 | [:ab:](#ab-mixing-solution)    | Mixing :heavy_check_mark:               |
+| :cl:                           | Algorithm Enhancement                   |
+| [:five:th](#fiveth-response)   | Alpha-Beta :heavy_check_mark:           |
 
 ## :a: Algorithm Template 
 
@@ -53,6 +55,8 @@ cargo run
 [:point_right: Click to view the output when executing the source code :chart: ](.docs/a/OUTPUT.md)
 
 ## :b: TicTacToe
+
+:bulb: First question asked to the Generative AI
 
 > generate tic tac toe game using minimax algorithm in rust
 
@@ -142,6 +146,22 @@ The `mixing solution` is to take the `2nd` solution and add the `3rd` solution :
 [:point_right: Click to view the generated source code :scroll: ](.docs/ab/CODE.md)
 
 
+## :cl TicTacToe with enhancced algorithm like `alpha-beta pruning`
+
+### [:five:th](#fiveth-response) Response
+
+:bulb: Second question asked to the Generative AI
+
+> generate tic tac toe game solved with minimax algorithm using alpha beta pruning in Rust 
+
+Certainly! Here's an example implementation of Tic Tac Toe solved with the Minimax algorithm using Alpha-Beta pruning in Rust:
+
+[:point_right: Click to view the generated source code :scroll: ](.docs/5/CODE.md)
+
+This implementation extends the previous Tic Tac Toe game implementation with the Minimax algorithm by adding Alpha-Beta pruning to improve efficiency. Alpha-Beta pruning helps to reduce the number of unnecessary evaluations by cutting off branches in the game tree that are guaranteed to be worse than previously explored options.
+
+Please note that the implementation assumes a standard 3x3 Tic Tac Toe board. If you want to modify the board size, you'll need to adjust the Board type and update the relevant parts of the code accordingly.
+
 - [ ] Execute
 
 ```
@@ -149,5 +169,5 @@ cargo run
 ```
 > Returns :
 
-[:point_right: Click to view the output when executing the source code :chart: ](.docs/ab/OUTPUT.md)
+[:point_right: Click to view the output when executing the source code :chart: ](.docs/5/OUTPUT.md)
 
