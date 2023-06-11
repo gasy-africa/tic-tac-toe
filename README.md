@@ -148,7 +148,7 @@ The `mixing solution` is to take the `2nd` solution and add the `3rd` solution :
 
 ## :cl TicTacToe with enhancced algorithm like `alpha-beta pruning`
 
-### [:five:th](#fifth-response)
+### [:five:th](#fiveth-response) Response
 
 :bulb: Second question asked to the Generative AI
 
