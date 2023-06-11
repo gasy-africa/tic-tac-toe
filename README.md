@@ -133,19 +133,6 @@ cargo run
 
 [:point_right: Click to view the output when executing the source code :chart: ](.docs/4/OUTPUT.md)
 
-## :ab: Mixing Solution
-
----
-**NOTE**
-
-The `mixing solution` is to take the `2nd` solution and add the `3rd` solution :keyboard: `input`, :desktop_computer: `output` and :loop: `loop` 
-
----
-
-:bulb: 1st code enhancement
-
-[:point_right: Click to view the generated source code :scroll: ](.docs/ab/1/CODE.md)
-
 
 ## :cl: TicTacToe with enhanced algorithm like `alpha-beta pruning`
 
@@ -172,3 +159,25 @@ cargo run
 
 [:point_right: Click to view the output when executing the source code :chart: ](.docs/5/OUTPUT.md)
 
+## :ab: Mixing Solution
+
+---
+**1st NOTE**
+
+The `mixing solution` is to take the `2nd` solution and add the `3rd` solution :keyboard: `input`, :desktop_computer: `output` and :loop: `loop` 
+
+---
+
+:bulb: 1st code enhancement
+
+[:point_right: Click to view the generated source code :scroll: ](.docs/ab/1/CODE.md)
+
+
+---
+**2nd NOTE**
+
+The `mixing solution` is to take the `5th` solution and add the `1st` mixing solution:
+
+* Adding the `get_empty_cells` and 
+
+---
