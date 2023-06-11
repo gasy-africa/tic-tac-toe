@@ -29,7 +29,7 @@ Generate multiple source codes using Generative AI and refactor to the best sour
 | [:four:th](#fourth-response)   | TicTactoe :heavy_check_mark:            |
 | [:ab:](#ab-mixing-solution)    | Mixing :heavy_check_mark:               |
 | :cl:                           | Algorithm Enhancement                   |
-| [:five:th](#fifth-response)    | Alpha-Beta :heavy_check_mark:           |
+| [:five:th](#fiveth-response)   | Alpha-Beta :heavy_check_mark:           |
 
 ## :a: Algorithm Template 
 
