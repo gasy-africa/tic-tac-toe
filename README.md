@@ -172,12 +172,3 @@ cargo run
 
 [:point_right: Click to view the output when executing the source code :chart: ](.docs/5/OUTPUT.md)
 
-```rust
-convert the below code to Vec<(usize, usize)>
- let cells: [[Symbol; 3];3] = self.board.cells.clone();
-        let empty_cells = cells
-            .iter().enumerate()
-            .map(|(row,cols)| 
-                    cols.iter().enumerate().map(|(col,_)| (row,col))
-                );
-```
