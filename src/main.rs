@@ -7,6 +7,8 @@ enum Player {
     O,
 }
 
+const DEBUG: bool = false;
+
 // Represents the possible states of a Tic Tac Toe cell
 
 #[derive(Debug, Copy, Clone, PartialEq)]
@@ -99,6 +101,7 @@ impl Board {
                             let mut new_board = self.clone();
                             new_board.cells[row][col] = Symbol::O; // O is the AI player
                             let eval = new_board.minimax(depth + 1, false);
+                            if DEBUG { println!("Cell({},{}), max {}, eval {}",row,col,max_eval,eval) }
                             max_eval = max_eval.max(eval);
                         }
                     }
@@ -112,6 +115,7 @@ impl Board {
                             let mut new_board = self.clone();
                             new_board.cells[row][col] = Symbol::X; // X is the human player
                             let eval = new_board.minimax(depth + 1, true);
+                            if DEBUG { println!("Cell({},{}), min {}, eval {}",row,col,min_eval,eval) }
                             min_eval = min_eval.min(eval);
                         }
                     }
