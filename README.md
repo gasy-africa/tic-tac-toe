@@ -146,7 +146,7 @@ The `mixing solution` is to take the `2nd` solution and add the `3rd` solution :
 [:point_right: Click to view the generated source code :scroll: ](.docs/ab/CODE.md)
 
 
-## :cl TicTacToe with enhancced algorithm like `alpha-beta pruning`
+## :cl: TicTacToe with enhancced algorithm like `alpha-beta pruning`
 
 ### [:five:th](#fiveth-response) Response
 
@@ -171,3 +171,12 @@ cargo run
 
 [:point_right: Click to view the output when executing the source code :chart: ](.docs/5/OUTPUT.md)
 
+```rust
+convert the below code to Vec<(usize, usize)>
+ let cells: [[Symbol; 3];3] = self.board.cells.clone();
+        let empty_cells = cells
+            .iter().enumerate()
+            .map(|(row,cols)| 
+                    cols.iter().enumerate().map(|(col,_)| (row,col))
+                );
+```
