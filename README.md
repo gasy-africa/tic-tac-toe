@@ -172,6 +172,16 @@ The `mixing solution` is to take the `2nd` solution and add the `3rd` solution :
 
 [:point_right: Click to view the generated source code :scroll: ](.docs/ab/1/CODE.md)
 
+- [ ] Execute
+
+```
+cargo run
+```
+> Returns :
+
+[:point_right: Click to view the output when executing the source code :chart: ](.docs/ab/1/OUTPUT.md)
+
+
 
 ---
 **2nd NOTE**
@@ -181,3 +191,17 @@ The `mixing solution` is to take the `5th` solution and add the `1st` mixing sol
 * Adding the `get_empty_cells` and 
 
 ---
+
+:bulb: 2nd code enhancement
+
+[:point_right: Click to view the generated source code :scroll: ](.docs/ab/2/CODE.md)
+
+- [ ] Execute
+
+```
+cargo run
+```
+> Returns :
+
+[:point_right: Click to view the output when executing the source code :chart: ](.docs/ab/2/OUTPUT.md)
+
