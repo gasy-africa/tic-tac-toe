@@ -170,17 +170,8 @@ The `mixing solution` is to take the `2nd` solution and add the `3rd` solution :
 
 :bulb: 1st code enhancement
 
-[:point_right: Click to view the generated source code :scroll: ](.docs/ab/1/CODE.md)
-
-- [ ] Execute
-
-```
-cargo run
-```
-> Returns :
-
-[:point_right: Click to view the output when executing the source code :chart: ](.docs/ab/1/OUTPUT.md)
-
+- [ ] [:point_right: Click to view the generated source code :scroll: ](.docs/ab/1/CODE.md)
+- [ ] [:point_right: Click to view the output when executing the source code :chart: ](.docs/ab/1/OUTPUT.md)
 
 
 ---
@@ -195,14 +186,4 @@ The `mixing solution` is to take the `5th` solution and add the `1st` mixing sol
 
 :bulb: 2nd code enhancement
 
-[:point_right: Click to view the generated source code :scroll: ](.docs/ab/2/CODE.md)
-
-- [ ] Execute
-
-```
-cargo run
-```
-> Returns :
-
-[:point_right: Click to view the output when executing the source code :chart: ](.docs/ab/2/OUTPUT.md)
-
+- [ ] [:point_right: Click to view the generated source code :scroll: ](.docs/ab/2/CODE.md)
