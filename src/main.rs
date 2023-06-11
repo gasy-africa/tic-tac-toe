@@ -44,6 +44,17 @@ impl Board {
         true
     }
 
+    // Returns all possible moves
+    fn get_empty_cells(&self) -> Vec<(usize, usize)> {
+        let empty_cells = self.cells
+            .iter().enumerate().flat_map(|(row, cols)| 
+                cols.iter().enumerate()
+                .filter(|&(_, &cell)| cell == Symbol::Empty )
+                .map(move |(col, _)| (row, col))
+            ).collect();
+        empty_cells
+    }
+
     // Returns true if the specified player has won
     fn has_won(&self, player: Player) -> bool {
         let symbol = match player {
@@ -95,30 +106,24 @@ impl Board {
         } else {
             let min_max = if maximizing_player {
                 let mut max_eval = std::i32::MIN;
-                for row in 0..3 {
-                    for col in 0..3 {
-                        if let Symbol::Empty = self.cells[row][col] {
-                            let mut new_board = self.clone();
-                            new_board.cells[row][col] = Symbol::O; // O is the AI player
-                            let eval = new_board.minimax(depth + 1, false);
-                            if DEBUG { println!("Cell({},{}), max {}, eval {}",row,col,max_eval,eval) }
-                            max_eval = max_eval.max(eval);
-                        }
-                    }
+                let empty_cells = self.get_empty_cells();
+                for &(row, col) in &empty_cells {
+                    let mut new_board = self.clone();
+                    new_board.cells[row][col] = Symbol::O; // O is the AI player
+                    let eval = new_board.minimax(depth + 1, false);
+                    if DEBUG { println!("Cell({},{}), max {}, eval {}",row,col,max_eval,eval) }
+                    max_eval = max_eval.max(eval);
                 }
                 max_eval
             } else {
                 let mut min_eval = std::i32::MAX;
-                for row in 0..3 {
-                    for col in 0..3 {
-                        if let Symbol::Empty = self.cells[row][col] {
-                            let mut new_board = self.clone();
-                            new_board.cells[row][col] = Symbol::X; // X is the human player
-                            let eval = new_board.minimax(depth + 1, true);
-                            if DEBUG { println!("Cell({},{}), min {}, eval {}",row,col,min_eval,eval) }
-                            min_eval = min_eval.min(eval);
-                        }
-                    }
+                let empty_cells = self.get_empty_cells();
+                for &(row, col) in &empty_cells {
+                    let mut new_board = self.clone();
+                    new_board.cells[row][col] = Symbol::X; // X is the human player
+                    let eval = new_board.minimax(depth + 1, true);
+                    if DEBUG { println!("Cell({},{}), min {}, eval {}",row,col,min_eval,eval) }
+                    min_eval = min_eval.min(eval);
                 }
                 min_eval
             };
@@ -142,6 +147,10 @@ impl GameState {
         }
     }
 
+    fn get_possible_moves(&self) -> Vec<(usize,usize)> {
+        self.board.get_empty_cells()
+    }
+
     fn make_move(&mut self, row: usize, col: usize) {
         self.board.cells[row][col] = match self.current_player {
             Player::X => Symbol::X,
@@ -162,7 +171,7 @@ impl GameState {
         let mut best_score = std::i32::MIN;
         let mut best_move = (0, 0);
 
-        for (row,col) in self.get_empty_cells() {
+        for (row,col) in self.get_possible_moves() {
             let mut new_board = self.board.clone();
             new_board.cells[row][col] = Symbol::O; // O is the AI player
             let score = new_board.minimax(0, false);
@@ -199,16 +208,6 @@ impl GameState {
             Ordering::Equal =>
                 Symbol::Empty,
         }
-    }
-
-    fn get_empty_cells(&self) -> Vec<(usize, usize)> {
-        let empty_cells = self.board.cells
-            .iter().enumerate().flat_map(|(row, cols)| 
-                cols.iter().enumerate()
-                .filter(|&(_, &cell)| cell == Symbol::Empty )
-                .map(move |(col, _)| (row, col))
-            ).collect();
-        empty_cells
     }
 
 }
