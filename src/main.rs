@@ -108,8 +108,7 @@ impl Board {
                 let mut max_eval = std::i32::MIN;
                 let empty_cells = self.get_empty_cells();
                 for &(row, col) in &empty_cells {
-                    let mut new_board = self.clone();
-                    GameState::make_move(&mut new_board,row, col, Player::O); // O is the AI player        
+                    let new_board = GameState::make_move(self.clone(),row, col, Player::O); // O is the AI player        
                     let eval = new_board.minimax(depth + 1, false);
                     if DEBUG { println!("Cell({},{}), max {}, eval {}",row,col,max_eval,eval) }
                     max_eval = max_eval.max(eval);
@@ -119,8 +118,7 @@ impl Board {
                 let mut min_eval = std::i32::MAX;
                 let empty_cells = self.get_empty_cells();
                 for &(row, col) in &empty_cells {
-                    let mut new_board = self.clone();
-                    GameState::make_move(&mut new_board,row, col, Player::X); // X is the human player        
+                    let new_board = GameState::make_move(self.clone(),row, col, Player::X); // X is the human player        
                     let eval = new_board.minimax(depth + 1, true);
                     if DEBUG { println!("Cell({},{}), min {}, eval {}",row,col,min_eval,eval) }
                     min_eval = min_eval.min(eval);
@@ -165,8 +163,7 @@ impl GameState {
         let mut best_move = (0, 0);
 
         for (row,col) in self.get_possible_moves() {
-            let mut new_board = self.board.clone();
-            GameState::make_move(&mut new_board,row, col, Player::O); // O is the AI player
+            let new_board = GameState::make_move(self.board.clone(),row, col, self.current_player); // O is the AI player
             let score = new_board.minimax(0, false);
             if score > best_score {
                 best_score = score;
@@ -204,11 +201,15 @@ impl GameState {
     }
 
     // Public function capturing the move to a passing board
-    pub fn make_move(board: &mut Board, row: usize, col: usize, player: Player) {
-        board.cells[row][col] = match player {
+    pub fn make_move(board: Board, row: usize, col: usize, player: Player) -> Board {
+        let mut new_board = board;
+
+        new_board.cells[row][col] = match player {
             Player::X => Symbol::X,
             Player::O => Symbol::O,
         };
+
+        new_board
     }
 
 }
@@ -235,7 +236,7 @@ fn play_game() {
                 _ => {
                     // Find the best move for the AI player
                     let (row,col) = state.find_best_move();
-                    GameState::make_move(&mut state.board,row, col, state.current_player);
+                    state.board = GameState::make_move(state.board,row, col, state.current_player);
 
                     state.current_player = Player::X;
 
@@ -293,7 +294,7 @@ fn handle_human_move(state: &mut GameState) {
         if input.len() == 2 {
             if let (Ok(row), Ok(col)) = (input[0].parse::<usize>(), input[1].parse::<usize>()) {
                 if state.is_valid_move(row, col) {
-                    GameState::make_move(&mut state.board,row, col, state.current_player);
+                    state.board = GameState::make_move(state.board,row, col, state.current_player);
                     break;
                 }
             }
