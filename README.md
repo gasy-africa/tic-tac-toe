@@ -211,6 +211,8 @@ The `mixing solution` is to take the `6th` solution and add the `3rd` mixing sol
 
 ## :test_tube: Let's test
 
+- [ ] Add the `rstest` dependency
+
 ```
 cargo add rstest 
 ```
@@ -222,7 +224,50 @@ cargo add rstest
              + async-timeout
 ```
 
+- [ ] This will add the rstest crate as a development dependency. (i.e. in `Cargo.toml` file)
+
 ```toml
-[dev-dependencies]
-rstest = "1.0"
+[dependencies]
+rstest = "0.17.0"
 ```
+
+- [ ] Now, create a new file called `tests.rs` in the src folder. This is where we'll write our test code.
+
+1. Add the following code to tests.rs:
+
+```rust
+#[cfg(test)]
+mod tests {
+    // Import the necessary crates and functions
+    use rstest::rstest;
+
+    // Write your test functions
+    #[rstest]
+    fn test_addition() {
+        assert_eq!(2 + 2, 4);
+    }
+
+    #[rstest]
+    fn test_subtraction() {
+        assert_eq!(4 - 2, 2);
+    }
+}
+```
+
+2. Save the file.
+
+3. Finally, run the tests using Cargo by executing the following command in your terminal:
+
+```shell
+cargo test
+```
+
+Cargo will automatically discover and run the tests defined in the tests module.
+
+That's it! You have now created a basic test code using Cargo in Rust.
+
+
+
+
+
+
