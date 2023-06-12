@@ -160,18 +160,18 @@ impl GameState {
     // Finds the best move for the AI player using the Minimax algorithm
     fn find_best_move(&self) -> (usize, usize) {
         let mut best_score = std::i32::MIN;
-        let mut best_move = (0, 0);
+        let mut best_move = None;
 
         for (row,col) in self.get_possible_moves() {
             let new_board = GameState::make_move(self.board.clone(),row, col, self.current_player); // O is the AI player
             let score = new_board.minimax(0, false);
             if score > best_score {
                 best_score = score;
-                best_move = (row, col);
+                best_move = Some((row, col));
             }
         }
 
-        best_move
+        best_move.unwrap()
     }
 
     fn is_terminal(&self) -> bool {
