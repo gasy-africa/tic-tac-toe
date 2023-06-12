@@ -19,17 +19,17 @@ Generate multiple source codes using Generative AI and refactor to the best sour
 
 
 
-| :hash:                         | Acivities                               |
-|--------------------------------|:----------------------------------------|
-| [:a:](#a-algorithm-template)   | Algorithm Template :heavy_check_mark:   |
-| :b:                            | Tic-Tac-Toe Source Code Generation      |
-| [:one:st](#onest-response)     | TicTactoe :heavy_check_mark:            |
-| [:two:nd](#twond-response)     | TicTactoe :heavy_check_mark:            |
-| [:three:rd](#threerd-response) | TicTactoe :heavy_check_mark:            |
-| [:four:th](#fourth-response)   | TicTactoe :heavy_check_mark:            |
-| [:ab:](#ab-mixing-solution)    | Mixing :heavy_check_mark:               |
-| :cl:                           | Algorithm Enhancement                   |
-| [:five:th](#fiveth-response)   | Alpha-Beta :heavy_check_mark:           |
+| :hash:                         | Acivities                           | Usefull :grey_question: |
+|--------------------------------|:------------------------------------|-------------------------|
+| [:a:](#a-algorithm-template)   | Algorithm Template                  | :heavy_check_mark: |
+| :b:                            | Tic-Tac-Toe Source Code Generation  |
+| [:one:st](#onest-response)     | TicTactoe                           | :heavy_check_mark: |
+| [:two:nd](#twond-response)     | TicTactoe                           | :heavy_check_mark: |
+| [:three:rd](#threerd-response) | TicTactoe                           | :heavy_check_mark: |
+| [:four:th](#fourth-response)   | TicTactoe                           | :heavy_check_mark: |
+| :cl:                           | Algorithm Enhancement               |
+| [:five:th](#fiveth-response)   | Alpha-Beta                          | :x:                |
+| [:ab:](#ab-mixing-solution)    | Mixing     
 
 ## :a: Algorithm Template 
 
