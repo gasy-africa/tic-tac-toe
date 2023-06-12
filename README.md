@@ -221,3 +221,8 @@ cargo add rstest
              Features:
              + async-timeout
 ```
+
+```toml
+[dev-dependencies]
+rstest = "1.0"
+```
