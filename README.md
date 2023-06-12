@@ -150,14 +150,22 @@ This implementation extends the previous Tic Tac Toe game implementation with th
 
 Please note that the implementation assumes a standard 3x3 Tic Tac Toe board. If you want to modify the board size, you'll need to adjust the Board type and update the relevant parts of the code accordingly.
 
-- [ ] Execute
+### [:six:th](#sixth-response) Response
 
-```
-cargo run
-```
-> Returns :
+:bulb: Third question asked to the Generative AI
 
-[:point_right: Click to view the output when executing the source code :chart: ](.docs/5/OUTPUT.md)
+> generate board game solved with minimax algorithm using alpha beta pruning in Rust 
+
+Certainly! Here's an example implementation of a board game solved with the Minimax algorithm using Alpha-Beta pruning in Rust:
+
+[:point_right: Click to view the generated source code :scroll: ](.docs/6/CODE.md)
+
+In this implementation, the game state is represented by the GameState type, and the players are represented by the Player enum. The game tree is created using the create_game_tree function, which recursively generates child nodes for each possible move. The Minimax algorithm with Alpha-Beta pruning is implemented in the minimax_alpha_beta function. The function get_best_move uses the Minimax algorithm with Alpha-Beta pruning to determine the best move for the current player.
+
+Please note that you'll need to replace the placeholders (...) with your actual game state type, implement the necessary functions and methods specific to your game, and customize the code according to the rules and requirements of your board game.
+
+- [ ] Cannot Execute (implementation only
+
 
 ## :ab: Mixing Solution
 
