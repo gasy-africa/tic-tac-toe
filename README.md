@@ -208,3 +208,16 @@ The `mixing solution` is to take the `6th` solution and add the `3rd` mixing sol
 :bulb: 3rd code enhancement
 
 - [ ] [:point_right: Click to view the generated source code :scroll: ](.docs/ab/3/CODE.md)
+
+## :test_tube: Let's test
+
+```
+cargo add rstest 
+```
+> Returns :
+```yaml
+    Updating crates.io index
+      Adding rstest v0.17.0 to dependencies.
+             Features:
+             + async-timeout
+```
