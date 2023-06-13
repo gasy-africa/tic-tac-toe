@@ -30,6 +30,7 @@ Generate multiple source codes using Generative AI and refactor to the best sour
 | :cl:                           | Algorithm Enhancement               |
 | [:five:th](#fiveth-response)   | Alpha-Beta                          | :x:                |
 | [:ab:](#ab-mixing-solution)    | Mixing     
+| [:snake:](#snake-coroutine)    | Coroutine 
 
 ## :a: Algorithm Template 
 
@@ -265,6 +266,8 @@ cargo test
 Cargo will automatically discover and run the tests defined in the tests module.
 
 That's it! You have now created a basic test code using Cargo in Rust.
+
+### :snake: Coroutine
 
 
 
