@@ -269,6 +269,10 @@ That's it! You have now created a basic test code using Cargo in Rust.
 
 ### :snake: Coroutine
 
+:bulb: Tool code enhancement
+
+- [ ] [:point_right: Click to view the generated source code :scroll: ](.docs/snake/CODE.md)
+- [ ] [:point_right: Click to view the output when executing the source code :chart: ](.docs/snake/OUTPUT.md)
 
 
 
