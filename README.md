@@ -30,7 +30,6 @@ Generate multiple source codes using Generative AI and refactor to the best sour
 | :cl:                           | Algorithm Enhancement               |
 | [:five:th](#fiveth-response)   | Alpha-Beta                          | :x:                |
 | [:ab:](#ab-mixing-solution)    | Mixing     
-| [:snake:](#snake-coroutine)    | Coroutine 
 
 ## :a: Algorithm Template 
 
