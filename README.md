@@ -284,12 +284,6 @@ When you run this code, it will print the following output:
 
 - [ ] [:point_right: Click to view the output when executing the source code :chart: ](.docs/snake/OUTPUT.md)
 
-```python
-Coroutine started
-Coroutine resumed
-Coroutine finished
-```
-
 This example demonstrates how to implement a simple coroutine-like behavior without using concurrency. It showcases how the resume method can be called multiple times to progress the coroutine through different states.
 
 
